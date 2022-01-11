@@ -1,0 +1,42 @@
+.decoded > div > div {
+    border-width: 1px 1px 0 1px;
+    border-color: #aaa;
+    border-style: solid;
+}
+
+.decoded .headerColumn {
+    height: 20px;
+    display: flex;
+    justify-content: left;
+    font-size: small;
+    font-weight: 400;
+}
+
+.decoded .headerColumn span {
+    text-transform: uppercase;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.decoded .data {
+    display: flex;
+    justify-content: left;
+    font-size: small;
+    min-height: 90px;
+    font-weight: 500;
+}
+
+.decoded > div > div:last-child {
+    border-bottom: 1px solid #aaa;
+}
+
+.decoded .verifySig {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.decoded .verifySig input {
+    height: 20px;
+    width: 300px;
+}

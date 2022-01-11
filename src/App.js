@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import AlgorithmSelector from './components/AlgorithmSelector';
+import Encoded from './components/Encoded';
+import Decoded from './components/Decoded';
+import { useState } from 'react';
+import useSharedValidityState from './components/useSharedValidityState';
 
 function App() {
+
+  const { validity, setValidity } = useSharedValidityState()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <h2 className='text-center'>Debugger</h2>
+      <Container>
+        <Row>
+          <AlgorithmSelector />
+        </Row>
+        <Row>
+          <Encoded />
+          <Decoded />
+        </Row>
+        <Row>
+          <p className={ validity ? "text-success" : "text-danger" }>{ validity ? "Valid" : "Invalid" }</p>
+        </Row>
+      </Container>
+    </Container>
   );
 }
 
